@@ -30,9 +30,9 @@ $(".btn").on("click", function(){
 function checkAnswer(currentLevel){
     if ((gamePattern[currentLevel] == userClickedPattern[currentLevel])){
         if(userClickedPattern.length == gamePattern.length){
-        setTimeout(function (){
-            nextSequence();
-          }, 1000);
+            setTimeout(function (){
+                nextSequence();
+            }, 1000);
         }
     }
     else {
@@ -43,7 +43,7 @@ function checkAnswer(currentLevel){
             $("body").removeClass("game-over"), 200;
         })
 
-        $("#level-title").text("Game Over > RESTART <");
+        $("#level-title").text("GAME OVER -RESTART-");
 
         startOver();
     }
@@ -58,7 +58,7 @@ function startOver(){
             highestLevel--;
         }
     }
-    $("#highest-level").html("Highest Level: " + highestLevel);
+    $("#highest-level").html("HIGHEST LEVEL: " + highestLevel);
     gameLevel = 0;
     gamePattern = [];
     gameStarted = false;
@@ -66,7 +66,7 @@ function startOver(){
 
 function nextSequence(){
     gameLevel++;
-    $("#level-title").html("Level "+ gameLevel);
+    $("#level-title").html("LEVEL "+ gameLevel);
     userClickedPattern = [];
 
     //for game pattern
